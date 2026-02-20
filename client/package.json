@@ -1,0 +1,20 @@
+{
+  "name": "client",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "leaflet": "^1.9.4"
+  },
+  "devDependencies": {
+    "@types/leaflet": "^1.9.17",
+    "vite": "^6.2.0",
+    "vitest": "^3.0.7",
+    "jsdom": "^26.0.0"
+  }
+}

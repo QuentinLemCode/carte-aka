@@ -1,0 +1,11 @@
+node_modules
+dist
+
+# Server compiled output
+server/dist
+server/src/**/*.js
+server/src/**/*.d.ts
+server/src/**/*.js.map
+server/src/**/*.d.ts.map
+
+.env

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carte AKA</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+  </head>
+  <body>
+    <div id="app">
+      <header id="top-bar">
+        <button id="burger-btn" aria-label="Afficher le panneau">
+          <span></span><span></span><span></span>
+        </button>
+        <div id="search-wrapper">
+          <input
+            id="search-input"
+            type="text"
+            placeholder="Rechercher une adresse..."
+            autocomplete="off"
+          />
+          <ul id="search-results"></ul>
+        </div>
+      </header>
+
+      <div id="main-content">
+        <div id="map-container">
+          <div id="map"></div>
+          <button id="fit-all-btn" title="Afficher toutes les adresses">
+            <svg
+              viewBox="0 0 24 24"
+              width="20"
+              height="20"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+            </svg>
+          </button>
+        </div>
+
+        <aside id="sidebar">
+          <h2>Adresses enregistr&#233;es</h2>
+          <ul id="address-list"></ul>
+          <p id="empty-msg">Aucune adresse enregistr&#233;e.</p>
+        </aside>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

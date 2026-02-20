@@ -1,0 +1,30 @@
+services:
+  app:
+    image: ghcr.io/OWNER/carte-aka:latest
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: postgresql://carte:changeme@db:5432/carte
+      PORT: "3000"
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+  db:
+    image: postgres:16-alpine
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: carte
+      POSTGRES_PASSWORD: changeme
+      POSTGRES_DB: carte
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U carte -d carte"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+volumes:
+  pgdata:
